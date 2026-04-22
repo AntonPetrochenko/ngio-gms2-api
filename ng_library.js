@@ -23,6 +23,14 @@ function ng_request_login() {
 	});
 }
 
+function ng_get_login() {
+	ngio.getValidSession(function () {
+		if (ngio.user) {
+			onLoggedIn();
+		}
+	});
+}
+
 function ng_cancel_login() {
 	ngio.cancelLoginRequest();
 }
